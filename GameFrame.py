@@ -44,7 +44,7 @@ paddle_direction = 0
 
 # 设置砖块
 bricks = []
-brick_width = 400
+brick_width = 40
 brick_height = 20
 num_bricks_x = WIDTH // brick_width
 num_bricks_y = 1
@@ -272,7 +272,7 @@ while running:
     pygame.display.flip()
 
     # 控制游戏刷新速度
-    pygame.time.Clock().tick(10000)
+    pygame.time.Clock().tick(100)
 
     ball_direction = 0
 
