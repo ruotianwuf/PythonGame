@@ -99,6 +99,38 @@ def show_menu():
 
         pygame.display.flip()
         pygame.time.Clock().tick(15)
+# 定义暂停界面函数
+def show_pause_menu():
+    global paused
+    paused = True
+    while paused:
+        for event in pygame.event.get():
+            if event.type == QUIT:
+                pygame.quit()
+                sys.exit()
+            if event.type == KEYDOWN:
+                if event.key == pygame.K_p:  # 按下P键继续游戏
+                    paused = False
+                elif event.key == pygame.K_ESCAPE:  # 按下Esc键退出游戏
+                    pygame.quit()
+                    sys.exit()
+
+        screen.fill(WHITE)
+        font = pygame.font.Font(None, 36)
+        text = font.render("Paused", True, RED)
+        text_rect = text.get_rect(center=(WIDTH // 2, HEIGHT // 4))
+        screen.blit(text, text_rect)
+
+        continue_text = font.render("Press P to Continue", True, GREEN)
+        continue_text_rect = continue_text.get_rect(center=(WIDTH // 2, HEIGHT // 2))
+        screen.blit(continue_text, continue_text_rect)
+
+        quit_text = font.render("Press Esc to Quit", True, BLUE)
+        quit_text_rect = quit_text.get_rect(center=(WIDTH // 2, HEIGHT * 3 // 4))
+        screen.blit(quit_text, quit_text_rect)
+
+        pygame.display.flip()
+        pygame.time.Clock().tick(15)
 
 # 显示菜单
 show_menu()
@@ -165,6 +197,8 @@ while running:
 
                 # print(num)
                 game_over = False
+            if event.key == pygame.K_p:  # 检测P键是否被按下，用于暂停游戏
+                show_pause_menu()  # 显示暂停菜单
 
     # 清屏
     screen.fill(WHITE)
