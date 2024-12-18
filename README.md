@@ -43,10 +43,14 @@
 ## Game Flow
 
 1. The game starts with a menu, waiting for the player to press Enter to begin.
+<img src="/img/menu.png">
 2. Players control the paddle to bounce the ball and break all the bricks.
+<img src="/img/game.png">
 3. If the ball falls off the bottom of the screen, the game ends, displaying a game over screen.
+<img src="/img/end.png">
 4. Players can restart or exit the game.
 5. When all bricks are destroyed, players proceed to the next level.
+<img src="/img/win.png">
 6. The game has a total of 12 levels, and upon completing all levels, a game complete screen is displayed.
 
 ## Notes
@@ -57,7 +61,20 @@
 
 ## Contribution
 
-Contributions to improve and optimize the code are welcome. You can submit your modifications via Pull Requests.
+**YIN ZHIWEI**
+   - Responsible for the game's core logic implementation.
+   - Handled the Pygame library integration and event handling system.
+   - Managed the game's user interface and menu system.
+
+**LIAO JIONGYI**
+   - In charge of the game's graphics and rendering.
+   - Designed and implemented the brick layout and ball physics.
+   - Developed the game's level progression system.
+
+**CHEN XINYU**
+   - Focused on testing and debugging the game.
+   - Ensured game performance optimization across different hardware.
+   - Handled the documentation and README file updates.
 
 ## License
 
